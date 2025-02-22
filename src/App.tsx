@@ -5,11 +5,15 @@ import AdminDash from "./pages/AdminDash.tsx";
 import DoctorDash from "./pages/DoctorDash.tsx";
 import ReceptionistDash from "./pages/ReceptionistDash.tsx";
 import AdminDoctorManage from "./pages/AdminManage/AdminDoctorManage.tsx"
+import {Provider} from "react-redux";
+import {store} from "./store/store.tsx";
 
 
 function App() {
 
   return (
+    <Provider store={store}>
+
 
       <Router>
         <Routes>
@@ -40,6 +44,7 @@ function App() {
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Router>
+    </Provider>
   );
 }
 
